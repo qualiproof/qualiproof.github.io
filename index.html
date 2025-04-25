@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QualiProof | Blockchain Quality Assurance</title>
+    <title>QualiProof | Automotive Quality Assurance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <style>
@@ -49,7 +49,7 @@
             padding: 0 5%;
         }
         
-        /* Futuristic Header */
+        /* Header */
         header {
             position: fixed;
             width: 100%;
@@ -246,6 +246,50 @@
             opacity: 0.8;
         }
         
+        /* Automotive Solutions Section */
+        .auto-solutions {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(255,102,204,0.05), rgba(204,153,255,0.05)));
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .solution-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(138,43,226,0.1);
+            transition: all 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(138,43,226,0.2);
+        }
+        
+        .solution-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--electric-pink), var(--neon-purple));
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-purple);
+        }
+        
         /* Floating Elements */
         .floating {
             animation: floating 6s ease-in-out infinite;
@@ -280,7 +324,7 @@
     </style>
 </head>
 <body>
-    <!-- Futuristic Header -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-flex">
@@ -288,7 +332,7 @@
                 <nav>
                     <ul>
                         <li><a href="#tech">Technology</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#solutions">Automotive Solutions</a></li>
                         <li><a href="#benefits">Benefits</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -302,14 +346,14 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="gradient-text">The Future of <br>Quality Assurance</h1>
-                <p>Blockchain-powered certification system combining federated learning and zero-knowledge proofs for tamper-proof quality verification in manufacturing.</p>
+                <h1 class="gradient-text">Automotive Quality <br>Reimagined</h1>
+                <p>Blockchain-powered certification system for automotive manufacturing, combining federated learning and zero-knowledge proofs for tamper-proof quality verification.</p>
                 <div class="cta-group">
                     <a href="#contact" class="cta-button primary-cta">
                         <i class="fas fa-rocket"></i> Join Beta
                     </a>
-                    <a href="#tech" class="cta-button secondary-cta">
-                        <i class="fas fa-eye"></i> See Demo
+                    <a href="#solutions" class="cta-button secondary-cta">
+                        <i class="fas fa-car"></i> See Solutions
                     </a>
                 </div>
             </div>
@@ -321,7 +365,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="gradient-text">Advanced Technology Stack</h2>
-                <p>Combining cutting-edge technologies for unparalleled quality verification</p>
+                <p>Cutting-edge technologies powering automotive quality assurance</p>
             </div>
             
             <div class="tech-grid">
@@ -330,7 +374,7 @@
                         <i class="fas fa-link"></i>
                     </div>
                     <h3>Blockchain Certificates</h3>
-                    <p>Immutable quality records stored on decentralized ledger with full transparency and auditability.</p>
+                    <p>Immutable quality records for every automotive component from raw materials to final assembly.</p>
                 </div>
                 
                 <div class="tech-card floating" style="animation-delay: 0.2s;">
@@ -338,7 +382,7 @@
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>Federated Learning</h3>
-                    <p>Collaborative AI that improves defect detection without sharing sensitive data.</p>
+                    <p>Collaborative AI that improves defect detection across suppliers without sharing sensitive data.</p>
                 </div>
                 
                 <div class="tech-card floating" style="animation-delay: 0.4s;">
@@ -346,67 +390,55 @@
                         <i class="fas fa-user-secret"></i>
                     </div>
                     <h3>Zero-Knowledge Proofs</h3>
-                    <p>Verify quality compliance without exposing proprietary manufacturing details.</p>
-                </div>
-                
-                <div class="tech-card floating" style="animation-delay: 0.6s;">
-                    <div class="tech-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Layer-2 Scaling</h3>
-                    <p>High-throughput processing with instant finality and minimal transaction costs.</p>
-                </div>
-                
-                <div class="tech-card floating" style="animation-delay: 0.8s;">
-                    <div class="tech-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Token Incentives</h3>
-                    <p>Reward system for quality participation using our AQT utility token.</p>
-                </div>
-                
-                <div class="tech-card floating" style="animation-delay: 1s;">
-                    <div class="tech-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Smart Contracts</h3>
-                    <p>Automated, tamper-proof execution of quality verification processes.</p>
+                    <p>Verify part compliance without exposing proprietary manufacturing processes.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Solutions Section -->
-    <section class="tech-showcase" id="solutions" style="background: linear-gradient(135deg, rgba(255,102,204,0.05), rgba(204,153,255,0.05)));">
+    <!-- Automotive Solutions Section -->
+    <section class="auto-solutions" id="solutions">
         <div class="container">
             <div class="section-header">
-                <h2 class="gradient-text">Industry Solutions</h2>
-                <p>Transforming quality assurance across manufacturing sectors</p>
+                <h2 class="gradient-text">Automotive Quality Solutions</h2>
+                <p>Specialized applications for the automotive manufacturing industry</p>
             </div>
             
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Automotive</h3>
-                    <p>End-to-end part certification from raw materials to final assembly with complete traceability.</p>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">1</div>
+                    <h3>Supplier Quality Network</h3>
+                    <p>Connect your entire supply chain on a unified quality verification platform. All tier suppliers contribute to and benefit from shared quality intelligence while maintaining data privacy.</p>
                 </div>
                 
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3>Aerospace</h3>
-                    <p>Mission-critical component verification with cryptographic proof of compliance.</p>
+                <div class="solution-card">
+                    <div class="solution-number">2</div>
+                    <h3>Component Traceability</h3>
+                    <p>End-to-end blockchain tracking for every automotive component from raw materials to final assembly. Instantly trace quality issues to their source and verify part authenticity.</p>
                 </div>
                 
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3>Industrial</h3>
-                    <p>Standardized quality verification across global supply chains and partners.</p>
+                <div class="solution-card">
+                    <div class="solution-number">3</div>
+                    <h3>AI-Powered Defect Detection</h3>
+                    <p>Federated learning system that improves defect recognition across all participants. The more suppliers join, the smarter the system becomes while protecting proprietary data.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">4</div>
+                    <h3>Warranty Optimization</h3>
+                    <p>Reduce warranty claims by 40%+ with cryptographically verified quality certificates. Identify potential failure points before vehicles leave the factory.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">5</div>
+                    <h3>Recall Prevention</h3>
+                    <p>Early warning system detects quality anomalies across the supply chain before they become costly recalls. Real-time monitoring of production quality metrics.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">6</div>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Automated generation of audit-ready quality documentation. Cryptographic proof of compliance with industry standards and regulations.</p>
                 </div>
             </div>
         </div>
@@ -416,33 +448,33 @@
     <section class="tech-showcase" id="benefits">
         <div class="container">
             <div class="section-header">
-                <h2 class="gradient-text">Strategic Advantages</h2>
-                <p>Why manufacturers are adopting QualiProof</p>
+                <h2 class="gradient-text">Automotive-Specific Benefits</h2>
+                <p>Why leading automotive manufacturers choose QualiProof</p>
             </div>
             
             <div class="tech-grid">
                 <div class="tech-card">
                     <div class="tech-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-money-bill-wave"></i>
                     </div>
                     <h3>Cost Reduction</h3>
-                    <p>60% decrease in quality-related recalls and warranty claims through early defect detection.</p>
+                    <p>60% decrease in quality-related costs including recalls, rework, and warranty claims through early defect detection.</p>
                 </div>
                 
                 <div class="tech-card">
                     <div class="tech-icon">
-                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Data Privacy</h3>
-                    <p>Maintain complete control over proprietary manufacturing data while contributing to collective intelligence.</p>
+                    <h3>Faster Time-to-Market</h3>
+                    <p>Reduce quality verification time by 75% with automated blockchain certification processes.</p>
                 </div>
                 
                 <div class="tech-card">
                     <div class="tech-icon">
-                        <i class="fas fa-award"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Brand Trust</h3>
-                    <p>Differentiate your products with cryptographically verifiable quality certifications.</p>
+                    <h3>Supply Chain Security</h3>
+                    <p>Eliminate counterfeit parts with cryptographic verification of all components in your supply chain.</p>
                 </div>
             </div>
         </div>
@@ -452,8 +484,8 @@
     <section class="tech-showcase" id="contact" style="padding-bottom: 8rem;">
         <div class="container">
             <div class="section-header">
-                <h2 class="gradient-text">Join The Quality Revolution</h2>
-                <p>Be among the first to implement next-generation quality assurance</p>
+                <h2 class="gradient-text">Transform Your Automotive Quality</h2>
+                <p>Schedule a demo tailored to automotive manufacturing needs</p>
             </div>
             
             <div style="max-width: 600px; margin: 0 auto; background: var(--white); padding: 3rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(138,43,226,0.1);">
@@ -468,19 +500,29 @@
                         <input type="email" style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
                     </div>
                     
-                    <div style="margin-bottom: 2rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Industry</label>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Production Volume</label>
                         <select style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
-                            <option>Automotive</option>
-                            <option>Aerospace</option>
-                            <option>Industrial Manufacturing</option>
-                            <option>Electronics</option>
-                            <option>Other</option>
+                            <option>Under 10,000 units/year</option>
+                            <option>10,000-100,000 units/year</option>
+                            <option>100,000-1M units/year</option>
+                            <option>Over 1M units/year</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Primary Challenge</label>
+                        <select style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
+                            <option>Supplier quality management</option>
+                            <option>Warranty claims reduction</option>
+                            <option>Recall prevention</option>
+                            <option>Regulatory compliance</option>
+                            <option>Counterfeit parts prevention</option>
                         </select>
                     </div>
                     
                     <button type="submit" style="width: 100%; padding: 1rem; background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple)); border: none; border-radius: 0.5rem; color: white; font-weight: bold; cursor: pointer; transition: all 0.3s;">
-                        Request Demo
+                        Request Automotive Demo
                     </button>
                 </form>
             </div>
