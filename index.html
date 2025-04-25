@@ -1,1 +1,673 @@
-<h1> My portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QualiProof - Blockchain-Based Quality Assurance for Automotive Manufacturing</title>
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --secondary: #4299e1;
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --accent: #38b2ac;
+            --success: #48bb78;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2c5282;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f7fafc 0%, #ebf4ff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .secondary-button {
+            background-color: white;
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Technology Section */
+        .technology {
+            padding: 80px 0;
+            background-color: #f7fafc;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tech-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .tech-card img {
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        /* Benefits */
+        .benefits {
+            padding: 80px 0;
+            background-color: #f7fafc;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefit-card h3 i {
+            margin-right: 10px;
+            color: var(--success);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .cta-button.white:hover {
+            background-color: #ebf4ff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a5568;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://via.placeholder.com/40" alt="QualiProof Logo">
+                    <h1>QualiProof</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#" class="cta-button">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Revolutionizing Quality Assurance with Blockchain & AI</h2>
+            <p>QualiProof combines federated learning, GANs, and blockchain technology to create a transparent, secure, and collaborative quality assurance ecosystem for automotive manufacturers.</p>
+            <div class="hero-buttons">
+                <a href="#" class="cta-button">Join the Pilot Program</a>
+                <a href="#" class="secondary-button">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Features</h2>
+                <p>QualiProof provides manufacturers with a comprehensive solution for quality assurance and certification</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Tamper-Proof Certification</h3>
+                    <p>Issue blockchain-based quality certificates that are immutable and verifiable by all stakeholders in the supply chain.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Defect Detection</h3>
+                    <p>Utilize f-AnoGAN models trained through federated learning to identify defects with unprecedented accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Privacy-Preserving Collaboration</h3>
+                    <p>Participate in federated learning without sharing sensitive data, maintaining complete control over your proprietary information.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Tokenized Incentives</h3>
+                    <p>Earn QualiProof tokens for contributing to the network and maintaining high quality standards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-Time Analytics</h3>
+                    <p>Access dashboards with actionable insights to improve your production processes and reduce defects.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Seamless Integration</h3>
+                    <p>Easy-to-use APIs and SDKs allow quick integration with your existing NDT equipment and software.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cutting-Edge Technologies</h2>
+                <p>QualiProof leverages the latest innovations in blockchain and AI to deliver unmatched value</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/80" alt="Blockchain Icon">
+                    <h3>Blockchain</h3>
+                    <p>Immutable ledger for certification and transparent quality records across the supply chain.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/80" alt="Federated Learning Icon">
+                    <h3>Federated Learning</h3>
+                    <p>Collaborative AI training without sharing raw data, preserving your privacy.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/80" alt="GANs Icon">
+                    <h3>f-AnoGAN</h3>
+                    <p>Advanced anomaly detection that improves with each manufacturer's participation.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/80" alt="ZKPs Icon">
+                    <h3>Zero-Knowledge Proofs</h3>
+                    <p>Validate quality without exposing sensitive data, ensuring compliance.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/80" alt="Layer 2 Icon">
+                    <h3>Layer-2 Scaling</h3>
+                    <p>High-throughput processing with low transaction costs for enterprise use.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/80" alt="DeFi Icon">
+                    <h3>DeFi Integration</h3>
+                    <p>Tokenized economy that rewards quality contributions and enables new business models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How QualiProof Works</h2>
+                <p>A simple four-step process to transform your quality assurance</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect Your NDT Equipment</h3>
+                        <p>Integrate QualiProof with your existing non-destructive testing systems using our simple APIs and SDKs.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Local AI Processing</h3>
+                        <p>Our f-AnoGAN model runs locally on your facility's data to detect defects while keeping all sensitive information private.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Contribute to Federated Learning</h3>
+                        <p>Share only model improvements (not raw data) to help the global detection model become smarter for all participants.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Receive Certification & Rewards</h3>
+                        <p>Get blockchain-based quality certificates for compliant parts and earn QualiProof tokens for your contributions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefits for Manufacturers</h2>
+                <p>Why leading automotive manufacturers are joining the QualiProof network</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3><i class="fas fa-chart-pie"></i> Cost Reduction</h3>
+                    <p>Reduce recalls, rework, and warranty claims by catching defects early in the production process. Our pilot participants have seen up to 30% reduction in quality-related costs.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-medal"></i> Competitive Advantage</h3>
+                    <p>Differentiate your products with verifiable quality certifications that build trust with buyers and regulators in the automotive supply chain.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-money-bill-wave"></i> New Revenue Streams</h3>
+                    <p>Earn QualiProof tokens for high-quality contributions that can be redeemed for services, grants, or traded on cryptocurrency exchanges.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-database"></i> Data Sovereignty</h3>
+                    <p>Maintain complete control over your proprietary data while still benefiting from collective intelligence through federated learning.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Process Optimization</h3>
+                    <p>Gain actionable insights from our analytics dashboard to continuously improve your production processes and quality metrics.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-handshake"></i> Supply Chain Trust</h3>
+                    <p>Create transparent relationships with suppliers and customers through immutable quality records that everyone can verify.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Quality Assurance?</h2>
+            <p>Join the QualiProof pilot program today and be among the first manufacturers to benefit from blockchain-based quality certification and AI-powered defect detection.</p>
+            <a href="#" class="cta-button white">Request a Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>QualiProof</h3>
+                    <p>Blockchain-based quality assurance for the automotive industry.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 QualiProof. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
