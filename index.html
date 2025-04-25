@@ -3,83 +3,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QualiProof - Blockchain-Based Certification System</title>
+    <title>QualiProof | Blockchain Quality Assurance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #ffffff;
-            color: #333333;
+        :root {
+            --electric-pink: #ff00ff;
+            --neon-purple: #8a2be2;
+            --soft-pink: #ff66cc;
+            --light-purple: #cc99ff;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-text: #2a2a2a;
+            --semi-transparent: rgba(255,255,255,0.8);
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
-        header {
-            text-align: center;
-            padding: 40px 20px 20px 20px;
+        
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+            overflow-x: hidden;
         }
-        header img {
-            width: 200px;
-            height: auto;
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--soft-pink), var(--light-purple));
+        }
+        
         .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
         }
-        h1, h2, h3 {
-            color: #6a1b9a; /* purple tone */
+        
+        /* Futuristic Header */
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: var(--semi-transparent);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(138,43,226,0.1);
         }
-        section {
-            margin-bottom: 40px;
+        
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--neon-purple);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,102,204,0.1), rgba(204,153,255,0.1));
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: var(--dark-text);
+            opacity: 0.9;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .primary-cta {
+            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(138,43,226,0.3);
+        }
+        
+        .primary-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(138,43,226,0.4);
+        }
+        
+        .secondary-cta {
+            border: 2px solid var(--neon-purple);
+            color: var(--neon-purple);
+        }
+        
+        .secondary-cta:hover {
+            background: linear-gradient(90deg, rgba(255,0,255,0.1), rgba(138,43,226,0.1));
+        }
+        
+        /* Tech Showcase */
+        .tech-showcase {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tech-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(138,43,226,0.1);
+            transition: all 0.3s;
+            border: 1px solid rgba(138,43,226,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138,43,226,0.2);
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .tech-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+        
+        .tech-card p {
+            color: var(--dark-text);
+            opacity: 0.8;
+        }
+        
+        /* Floating Elements */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <img src="YOUR_LOGO_IMAGE_PATH_HERE.png" alt="QualiProof Logo">
-    <h1>Blockchain-Based Certification System with Federated Learning & GANs</h1>
-</header>
-
-<div class="container">
-
-    <section>
-        <h2>Core Value Proposition</h2>
-        <ul>
-            <li><strong>Improve Product Quality</strong>: Detect defects early using advanced AI (f-AnoGAN).</li>
-            <li><strong>Reduce Costs</strong>: Minimize recalls, rework, and warranty claims.</li>
-            <li><strong>Enhance Trust</strong>: Tamper-proof blockchain certificates for compliance.</li>
-            <li><strong>Earn Rewards</strong>: Tokenized ecosystem for high-quality manufacturers.</li>
-        </ul>
+    <!-- Futuristic Header -->
+    <header>
+        <div class="container">
+            <div class="header-flex">
+                <div class="logo">QualiProof</div>
+                <nav>
+                    <ul>
+                        <li><a href="#tech">Technology</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="gradient-text">The Future of <br>Quality Assurance</h1>
+                <p>Blockchain-powered certification system combining federated learning and zero-knowledge proofs for tamper-proof quality verification in manufacturing.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="cta-button primary-cta">
+                        <i class="fas fa-rocket"></i> Join Beta
+                    </a>
+                    <a href="#tech" class="cta-button secondary-cta">
+                        <i class="fas fa-eye"></i> See Demo
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section>
-        <h2>Key Features</h2>
-        <ul>
-            <li>Seamless Plug-and-Play Integration</li>
-            <li>Federated Learning - Privacy Preserved</li>
-            <li>Blockchain-Based Quality Certification</li>
-            <li>Tokenized Incentive Mechanism</li>
-            <li>Real-Time Monitoring & Analytics</li>
-        </ul>
+    
+    <!-- Tech Showcase Section -->
+    <section class="tech-showcase" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Advanced Technology Stack</h2>
+                <p>Combining cutting-edge technologies for unparalleled quality verification</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card floating" style="animation-delay: 0s;">
+                    <div class="tech-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Blockchain Certificates</h3>
+                    <p>Immutable quality records stored on decentralized ledger with full transparency and auditability.</p>
+                </div>
+                
+                <div class="tech-card floating" style="animation-delay: 0.2s;">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Federated Learning</h3>
+                    <p>Collaborative AI that improves defect detection without sharing sensitive data.</p>
+                </div>
+                
+                <div class="tech-card floating" style="animation-delay: 0.4s;">
+                    <div class="tech-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Zero-Knowledge Proofs</h3>
+                    <p>Verify quality compliance without exposing proprietary manufacturing details.</p>
+                </div>
+                
+                <div class="tech-card floating" style="animation-delay: 0.6s;">
+                    <div class="tech-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Layer-2 Scaling</h3>
+                    <p>High-throughput processing with instant finality and minimal transaction costs.</p>
+                </div>
+                
+                <div class="tech-card floating" style="animation-delay: 0.8s;">
+                    <div class="tech-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Token Incentives</h3>
+                    <p>Reward system for quality participation using our AQT utility token.</p>
+                </div>
+                
+                <div class="tech-card floating" style="animation-delay: 1s;">
+                    <div class="tech-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Smart Contracts</h3>
+                    <p>Automated, tamper-proof execution of quality verification processes.</p>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section>
-        <h2>Implementation Plan</h2>
-        <p><strong>Phase 1:</strong> Pilot with 3-5 manufacturers — integrate federated learning, smart contracts, dashboard.</p>
-        <p><strong>Phase 2:</strong> Full launch — onboard more manufacturers, decentralized governance, DeFi marketplace.</p>
+    
+    <!-- Solutions Section -->
+    <section class="tech-showcase" id="solutions" style="background: linear-gradient(135deg, rgba(255,102,204,0.05), rgba(204,153,255,0.05)));">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Industry Solutions</h2>
+                <p>Transforming quality assurance across manufacturing sectors</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Automotive</h3>
+                    <p>End-to-end part certification from raw materials to final assembly with complete traceability.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Aerospace</h3>
+                    <p>Mission-critical component verification with cryptographic proof of compliance.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial</h3>
+                    <p>Standardized quality verification across global supply chains and partners.</p>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section>
-        <h2>Technology Highlights</h2>
-        <ul>
-            <li>Zero-Knowledge Proofs for Data Privacy</li>
-            <li>Layer-2 Scaling Solutions for Cost Efficiency</li>
-            <li>DeFi Integration for Tokenized Rewards & Governance</li>
-        </ul>
+    
+    <!-- Benefits Section -->
+    <section class="tech-showcase" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Strategic Advantages</h2>
+                <p>Why manufacturers are adopting QualiProof</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Cost Reduction</h3>
+                    <p>60% decrease in quality-related recalls and warranty claims through early defect detection.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Data Privacy</h3>
+                    <p>Maintain complete control over proprietary manufacturing data while contributing to collective intelligence.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Brand Trust</h3>
+                    <p>Differentiate your products with cryptographically verifiable quality certifications.</p>
+                </div>
+            </div>
+        </div>
     </section>
-
-</div>
-
+    
+    <!-- Contact Section -->
+    <section class="tech-showcase" id="contact" style="padding-bottom: 8rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Join The Quality Revolution</h2>
+                <p>Be among the first to implement next-generation quality assurance</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto; background: var(--white); padding: 3rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(138,43,226,0.1);">
+                <form>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Company Name</label>
+                        <input type="text" style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
+                        <input type="email" style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Industry</label>
+                        <select style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
+                            <option>Automotive</option>
+                            <option>Aerospace</option>
+                            <option>Industrial Manufacturing</option>
+                            <option>Electronics</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" style="width: 100%; padding: 1rem; background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple)); border: none; border-radius: 0.5rem; color: white; font-weight: bold; cursor: pointer; transition: all 0.3s;">
+                        Request Demo
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add floating animation to random elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.tech-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>
