@@ -3,322 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QualiProof | Automotive Quality Assurance</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <title>TechStart - Innovative Solutions</title>
     <style>
-        :root {
-            --electric-pink: #ff00ff;
-            --neon-purple: #8a2be2;
-            --soft-pink: #ff66cc;
-            --light-purple: #cc99ff;
-            --white: #ffffff;
-            --light-gray: #f8f9fa;
-            --dark-text: #2a2a2a;
-            --semi-transparent: rgba(255,255,255,0.8);
-        }
-        
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: var(--white);
-            color: var(--dark-text);
-            overflow-x: hidden;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--soft-pink), var(--light-purple));
+            line-height: 1.6;
+            color: #333;
         }
         
         .container {
-            width: 100%;
-            max-width: 1400px;
+            width: 85%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 5%;
         }
         
-        /* Header */
+        /* Header Styles */
         header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
-            z-index: 1000;
-            padding: 1.5rem 0;
-            background: var(--semi-transparent);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(138,43,226,0.1);
+            z-index: 100;
         }
         
-        .header-flex {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
         
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 500;
-            font-size: 2rem;
-            letter-spacing: 1px;
-            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            display: flex;
+            align-items: center;
         }
         
-        nav ul {
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+        
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
         }
         
-        nav a {
-            color: var(--dark-text);
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
             text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            padding: 0.5rem 0;
+            color: #2c3e50;
+            font-weight: 500;
             transition: color 0.3s;
         }
         
-        nav a:hover {
-            color: var(--neon-purple);
+        .nav-links a:hover {
+            color: #3498db;
         }
         
-        nav a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
-            transition: width 0.3s;
-        }
-        
-        nav a:hover:after {
-            width: 100%;
+        .cta-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
         }
         
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 6rem;
-            position: relative;
-            overflow: hidden;
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
         }
         
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255,102,204,0.1), rgba(204,153,255,0.1));
-            z-index: -1;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
         
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-            color: var(--dark-text);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #7f8c8d;
+        }
+        
+        .hero-image {
+            max-width: 800px;
+            margin: 40px auto 0;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+        
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
             opacity: 0.9;
         }
         
-        .cta-group {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .primary-cta {
-            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
-            color: var(--white);
-            box-shadow: 0 5px 15px rgba(138,43,226,0.3);
-        }
-        
-        .primary-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(138,43,226,0.4);
-        }
-        
-        .secondary-cta {
-            border: 2px solid var(--neon-purple);
-            color: var(--neon-purple);
-        }
-        
-        .secondary-cta:hover {
-            background: linear-gradient(90deg, rgba(255,0,255,0.1), rgba(138,43,226,0.1));
-        }
-        
-        /* Tech Showcase */
-        .tech-showcase {
-            padding: 6rem 0;
-            position: relative;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .tech-card {
-            background: var(--white);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(138,43,226,0.1);
-            transition: all 0.3s;
-            border: 1px solid rgba(138,43,226,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tech-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(138,43,226,0.2);
-        }
-        
-        .tech-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .tech-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-        }
-        
-        .tech-card p {
-            color: var(--dark-text);
-            opacity: 0.8;
-        }
-        
-        /* Automotive Solutions Section */
-        .auto-solutions {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(255,102,204,0.05), rgba(204,153,255,0.05)));
-        }
-        
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-        
-        .solution-card {
-            background: var(--white);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: 0 5px 20px rgba(138,43,226,0.1);
-            transition: all 0.3s;
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(138,43,226,0.2);
-        }
-        
-        .solution-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--electric-pink), var(--neon-purple));
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
+        .cta-button-white {
+            background-color: white;
+            color: #3498db;
+            padding: 12px 30px;
+            border-radius: 5px;
             font-weight: bold;
-            margin-bottom: 1.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s;
         }
         
-        .solution-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--neon-purple);
+        .cta-button-white:hover {
+            transform: scale(1.05);
         }
         
-        /* Floating Elements */
-        .floating {
-            animation: floating 6s ease-in-out infinite;
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
         }
         
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
         
-        /* Responsive */
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-flex {
-                flex-direction: column;
-                gap: 1rem;
+            .nav-links {
+                display: none;
             }
             
-            nav ul {
-                justify-content: center;
-                flex-wrap: wrap;
+            .hero h2 {
+                font-size: 2rem;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .cta-group {
-                flex-direction: column;
+            .hero p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -327,226 +332,176 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="header-flex">
-                <div class="logo">QualiProof</div>
-                <nav>
-                    <ul>
-                        <li><a href="#tech">Technology</a></li>
-                        <li><a href="#solutions">Automotive Solutions</a></li>
-                        <li><a href="#benefits">Benefits</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="TechStart Logo">
+                    <h1>TechStart</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="cta-button">Get Started</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="gradient-text">Automotive Quality <br>Reimagined</h1>
-                <p>Blockchain-powered certification system for automotive manufacturing, combining federated learning and zero-knowledge proofs for tamper-proof quality verification.</p>
-                <div class="cta-group">
-                    <a href="#contact" class="cta-button primary-cta">
-                        <i class="fas fa-rocket"></i> Join Beta
-                    </a>
-                    <a href="#solutions" class="cta-button secondary-cta">
-                        <i class="fas fa-car"></i> See Solutions
-                    </a>
+            <h2>Innovative Solutions for Modern Businesses</h2>
+            <p>Our cutting-edge platform helps startups and enterprises streamline operations, boost productivity, and drive growth with AI-powered tools.</p>
+            <a href="#" class="cta-button">Start Free Trial</a>
+            <div class="hero-image">
+                <img src="dashboard-screenshot.jpg" alt="TechStart Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h3>Powerful Features</h3>
+                <p>Discover how our platform can transform your business operations with these key features</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="ai-icon.png" alt="AI Icon">
+                    </div>
+                    <h4>AI-Powered Analytics</h4>
+                    <p>Get real-time insights and predictive analytics to make data-driven decisions with confidence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="automation-icon.png" alt="Automation Icon">
+                    </div>
+                    <h4>Smart Automation</h4>
+                    <p>Automate repetitive tasks and workflows to save time and reduce human error.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="collab-icon.png" alt="Collaboration Icon">
+                    </div>
+                    <h4>Seamless Collaboration</h4>
+                    <p>Work together effortlessly with integrated team communication and project management tools.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Tech Showcase Section -->
-    <section class="tech-showcase" id="tech">
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
         <div class="container">
-            <div class="section-header">
-                <h2 class="gradient-text">Advanced Technology Stack</h2>
-                <p>Cutting-edge technologies powering automotive quality assurance</p>
+            <div class="section-title">
+                <h3>What Our Customers Say</h3>
+                <p>Join thousands of satisfied businesses who have transformed their operations</p>
             </div>
-            
-            <div class="tech-grid">
-                <div class="tech-card floating" style="animation-delay: 0s;">
-                    <div class="tech-icon">
-                        <i class="fas fa-link"></i>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"TechStart has completely revolutionized how we handle data. The AI insights have helped us increase revenue by 30% in just three months."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="customer1.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h5>Sarah Johnson</h5>
+                            <p>CEO, DataCorp</p>
+                        </div>
                     </div>
-                    <h3>Blockchain Certificates</h3>
-                    <p>Immutable quality records for every automotive component from raw materials to final assembly.</p>
                 </div>
-                
-                <div class="tech-card floating" style="animation-delay: 0.2s;">
-                    <div class="tech-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The automation features saved us hundreds of hours in manual work. Our team can now focus on strategic initiatives instead of repetitive tasks."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="customer2.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h5>Michael Chen</h5>
+                            <p>CTO, InnovateTech</p>
+                        </div>
                     </div>
-                    <h3>Federated Learning</h3>
-                    <p>Collaborative AI that improves defect detection across suppliers without sharing sensitive data.</p>
                 </div>
-                
-                <div class="tech-card floating" style="animation-delay: 0.4s;">
-                    <div class="tech-icon">
-                        <i class="fas fa-user-secret"></i>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Implementation was seamless and the support team was incredibly helpful. We saw ROI within the first month of using TechStart."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="customer3.jpg" alt="Emma Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h5>Emma Rodriguez</h5>
+                            <p>Operations Director, SwiftSolutions</p>
+                        </div>
                     </div>
-                    <h3>Zero-Knowledge Proofs</h3>
-                    <p>Verify part compliance without exposing proprietary manufacturing processes.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Automotive Solutions Section -->
-    <section class="auto-solutions" id="solutions">
+
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <div class="section-header">
-                <h2 class="gradient-text">Automotive Quality Solutions</h2>
-                <p>Specialized applications for the automotive manufacturing industry</p>
-            </div>
-            
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-number">1</div>
-                    <h3>Supplier Quality Network</h3>
-                    <p>Connect your entire supply chain on a unified quality verification platform. All tier suppliers contribute to and benefit from shared quality intelligence while maintaining data privacy.</p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">2</div>
-                    <h3>Component Traceability</h3>
-                    <p>End-to-end blockchain tracking for every automotive component from raw materials to final assembly. Instantly trace quality issues to their source and verify part authenticity.</p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">3</div>
-                    <h3>AI-Powered Defect Detection</h3>
-                    <p>Federated learning system that improves defect recognition across all participants. The more suppliers join, the smarter the system becomes while protecting proprietary data.</p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">4</div>
-                    <h3>Warranty Optimization</h3>
-                    <p>Reduce warranty claims by 40%+ with cryptographically verified quality certificates. Identify potential failure points before vehicles leave the factory.</p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">5</div>
-                    <h3>Recall Prevention</h3>
-                    <p>Early warning system detects quality anomalies across the supply chain before they become costly recalls. Real-time monitoring of production quality metrics.</p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">6</div>
-                    <h3>Regulatory Compliance</h3>
-                    <p>Automated generation of audit-ready quality documentation. Cryptographic proof of compliance with industry standards and regulations.</p>
-                </div>
-            </div>
+            <h3>Ready to Transform Your Business?</h3>
+            <p>Join thousands of companies who are already benefiting from our innovative platform. Start your free 14-day trial today.</p>
+            <a href="#" class="cta-button-white">Get Started Now</a>
         </div>
     </section>
-    
-    <!-- Benefits Section -->
-    <section class="tech-showcase" id="benefits">
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div class="section-header">
-                <h2 class="gradient-text">Automotive-Specific Benefits</h2>
-                <p>Why leading automotive manufacturers choose QualiProof</p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="logo-white.png" alt="TechStart Logo">
+                        <h1>TechStart</h1>
+                    </div>
+                    <p style="margin-top: 15px; color: #bdc3c7;">Innovative solutions for modern businesses.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">support@techstart.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li><a href="#">123 Tech Street, San Francisco, CA</a></li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Cost Reduction</h3>
-                    <p>60% decrease in quality-related costs including recalls, rework, and warranty claims through early defect detection.</p>
-                </div>
-                
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Faster Time-to-Market</h3>
-                    <p>Reduce quality verification time by 75% with automated blockchain certification processes.</p>
-                </div>
-                
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Supply Chain Security</h3>
-                    <p>Eliminate counterfeit parts with cryptographic verification of all components in your supply chain.</p>
-                </div>
+            <div class="copyright">
+                <p>&copy; 2023 TechStart. All rights reserved.</p>
             </div>
         </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="tech-showcase" id="contact" style="padding-bottom: 8rem;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="gradient-text">Transform Your Automotive Quality</h2>
-                <p>Schedule a demo tailored to automotive manufacturing needs</p>
-            </div>
-            
-            <div style="max-width: 600px; margin: 0 auto; background: var(--white); padding: 3rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(138,43,226,0.1);">
-                <form>
-                    <div style="margin-bottom: 1.5rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Company Name</label>
-                        <input type="text" style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
-                        <input type="email" style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Production Volume</label>
-                        <select style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
-                            <option>Under 10,000 units/year</option>
-                            <option>10,000-100,000 units/year</option>
-                            <option>100,000-1M units/year</option>
-                            <option>Over 1M units/year</option>
-                        </select>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Primary Challenge</label>
-                        <select style="width: 100%; padding: 1rem; background: var(--light-gray); border: 1px solid rgba(138,43,226,0.2); border-radius: 0.5rem; color: var(--dark-text);">
-                            <option>Supplier quality management</option>
-                            <option>Warranty claims reduction</option>
-                            <option>Recall prevention</option>
-                            <option>Regulatory compliance</option>
-                            <option>Counterfeit parts prevention</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" style="width: 100%; padding: 1rem; background: linear-gradient(90deg, var(--electric-pink), var(--neon-purple)); border: none; border-radius: 0.5rem; color: white; font-weight: bold; cursor: pointer; transition: all 0.3s;">
-                        Request Automotive Demo
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Add floating animation to random elements
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.tech-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-        });
-    </script>
+    </footer>
 </body>
 </html>
